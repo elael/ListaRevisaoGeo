@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Sun Aug 17 18:46:18 BRT 2014
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=document.tex
+outputFile=ListaAulaGeo.pdf
+langSpell=en
+markDer=true
+srcDir=src
