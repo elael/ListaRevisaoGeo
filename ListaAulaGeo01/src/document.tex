@@ -13,7 +13,10 @@
 \usepackage{enumerate}
 \usepackage{xfrac}
 
+\usepackage{multicol}
+
 \usepackage{pgf,tikz}
+\usepackage{pgfplots}
 \usetikzlibrary{arrows}
 
 \newcommand{\degre}{\ensuremath{^\circ}}
@@ -21,7 +24,7 @@
 \newcommand{\efig}{\end{figure}}
 \renewcommand{\thesection}{\Roman{section}} 
 
-\definecolor{qqwuqq}{rgb}{0,0.39,0}
+
 \definecolor{zzttqq}{rgb}{0.6,0.2,0}
 \definecolor{xdxdff}{rgb}{0.49,0.49,1}
 \definecolor{qqqqff}{rgb}{0,0,1}
@@ -31,147 +34,212 @@
 \definecolor{qqwuqq}{rgb}{0.0,0.39215686274509803,0.0}
 \definecolor{ffqqqq}{rgb}{1.0,0.0,0.0}
 
+ \pgfplotsset{compat=1.9}
 \begin{document}
 
-\title{Lista de Geometria Euclidiana}
+\title{Mini Simulado}
 \author{Prof. Eduardo Elael}
-\date{Lista Revisão - PVNC 2014}
+\date{Lista Simulada UERJ - PVNC 2014}
 \maketitle
 
 
 \begin{flushright}
-  \emph{Data da realização:} 18/ago/2014
+  \emph{Data da realização:} 1/set/2014
 \end{flushright}
 
-\section{Revisão}
+\section{Matemática}
 \begin{enumerate}[{R}1]
  
-  \item Ache a função \(y=f(x)\) que todos seus pontos \((x,y)\) tem a mesma
-  distância para o ponto \(F(0,\sfrac{1}{4})\) e para a reta d,
-  \(y=-\frac{1}{4}\).
+  \item Uma escada de $2m$ é apoiada sobre uma parede perpendicular ao chão.
+  Pode-se afirmar que a distância do centro da escada ao canto, vértice entre o
+  chão e a parede, é: 
 
   \nopagebreak[4]
+  \begin{multicols}{2}
+  \begin{enumerate}[a)]
+    \item $0,5m$
+    \item $1,0m$
+    \item $1,2m$
+    \item $1,5m$
+  \end{enumerate}
   
-
-		\begin{figure}[!h]
-		\centering
-			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-			\draw[->,color=black] (-4.021078886170084,0.0) -- (4.756065301642141,0.0);
-			\foreach \x in {-4.0,-3.5,-3.0,-2.5,-2.0,-1.5,-1.0,-0.5,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5}
-			\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt);
-			\draw[->,color=black] (0.0,-2.5452374503323383) -- (0.0,2.511871353884455);
-			\foreach \y in {-2.5,-2.0,-1.5,-1.0,-0.5,0.5,1.0,1.5,2.0,2.5}
-			\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
-			\clip(-4.021078886170084,-2.5452374503323383) rectangle (4.756065301642141,2.511871353884455);
-			\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (2.5,-1.9159596726519414) -- (2.4159596726519417,-1.9159596726519414) -- (2.4159596726519417,-2.0) -- (2.5,-2.0) -- cycle; 
-			\draw [color=ffqqqq,domain=-4.021078886170084:4.756065301642141] plot(\x,{(-4.0-0.0*\x)/2.0});
-			\draw [dotted] (0.0,2.0)-- (2.5,0.78125);
-			\draw [dotted] (2.5,-2.0)-- (2.5,0.78125);
-			\draw (0.025796666910569758,-1.9509825967228445) node[anchor=north west] {$-\frac{1}{4}$};
-			\draw (-0.4198944732965507,2.2325715726879927) node[anchor=north west] {$\frac{1}{4}$};
-			\draw (2.4978968579260648,0.8539003123139668) node[anchor=north west] {$(x,y)$};
-			\begin{scriptsize}
-			\draw[color=ffqqqq] (-3.973538497881325,-1.903442208434085) node {$d$};
-			\draw [fill=ffqqqq] (0.0,2.0) circle (1.5pt);
-			\draw[color=ffqqqq] (0.20407312299341795,2.101835504893904) node {$F$};
-			\draw [fill=black] (2.5,-2.0) circle (1.5pt);
-			\draw [fill=ffqqqq] (2.5,0.78125) circle (2.0pt);
-			\end{scriptsize}
-			\end{tikzpicture}
-		\end{figure}
+	\begin{figure}[H]
+		 \centering
+		\begin{tikzpicture}[left, scale = 0.5, line cap=round,line
+		join=round,>=triangle 45,x=1.0cm,y=1.0cm] \clip(5.76,-4.1) rectangle (12.88,4);
+		\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (10,-3.79) -- (9.79,-3.79) -- (9.79,-4) -- (10,-4) -- cycle;
+		\draw (10,-4) -- (10,4);
+		\draw [domain=5.76:10.0] plot(\x,{(--8-0*\x)/-2});
+		\draw [line width=2.8pt,color=zzttqq] (10,1)-- (8,-4);
+		\draw [dash pattern=on 1pt off 1pt] (9,-1.5)-- (10,-4);
+		\begin{scriptsize}
+		\fill [color=uququq] (9,-1.5) circle (1.5pt);
+		\draw[color=uququq] (8.66,-1.18) node {$D$};
+		\end{scriptsize}
+		\end{tikzpicture}
+	\end{figure}
+  \end{multicols}
   %\nopagebreak[4]
-  \item Sabendo que os ângulos \(B\hat{C}D\) e \(E\hat{C}A\) são iguais. Mostre
-  que
-  \(\frac{\overline{AD}}{\overline{BD}}=\frac{\overline{AC}}{\overline{BC}}\).\\
-  \textit{Dica: \textbf{semelhança} é vida!}
-
-  \nopagebreak[4]
+  \item Um rolo de pintar composto por um cilindro de $10cm$ de diâmetro é
+  inserido diagonalmente no vaso de tinta, a fim de fazer um detalhe ondulado na
+  pintura (como mostra a figura). O rolo é passado por uma superficie plana
+  para formar esse detalhe. Nessa situação o espaçamento entre dois vales
+  consecutivos da ondulação criada é:
   
 
-		\begin{figure}[!h]
-		\centering
-			\begin{tikzpicture}[scale=0.5,line cap=round,line join=round,>=triangle
-			45,x=1.0cm,y=1.0cm] \clip(3.460230677202207,-4.100222850059955) rectangle (20.033436841484473,3.511300551255019);
-			\draw [shift={(11.02,0.3)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (-73.46017599877106:0.5063097606196211) arc (-73.46017599877106:-22.364911495515354:0.5063097606196211) -- cycle;
-			\draw [shift={(11.02,0.3)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (157.63508850448466:0.5063097606196211) arc (157.63508850448466:208.73035300774038:0.5063097606196211) -- cycle;
-			\draw (5.0,-3.0)-- (11.02,0.3);
-			\draw (11.02,0.3)-- (12.0,-3.0);
-			\draw (5.0,-3.0)-- (19.0403378462527,-3.0);
-			\draw (19.0403378462527,-3.0)-- (11.02,0.3);
-			\draw [dotted] (11.02,0.3)-- (6.111598650550334,2.3195813148634206);
-			\begin{scriptsize}
-			\draw [fill=qqqqff] (5.0,-3.0) circle (1.5pt);
-			\draw[color=qqqqff] (4.675374102689298,-3.1888652809446367) node {$A$};
-			\draw [fill=qqqqff] (12.0,-3.0) circle (1.5pt);
-			\draw[color=qqqqff] (11.99998863965315,-3.290127233068561) node {$B$};
-			\draw [fill=qqqqff] (11.02,0.3) circle (1.5pt);
-			\draw[color=qqqqff] (11.139262046599795,0.5409499556199071) node {$C$};
-			\draw [fill=uuuuuu] (19.0403378462527,-3.0) circle (1.5pt);
-			\draw[color=uuuuuu] (19.375234152678967,-3.2394962570065986) node {$D$};
-			\draw [fill=xdxdff] (6.111598650550334,2.3195813148634206) circle (1.5pt);
-			\draw[color=xdxdff] (6.228057368589469,2.549312006077739) node {$E$};
-			\end{scriptsize}
-			\end{tikzpicture}
-		\end{figure}
-		
+  \nopagebreak[4]
+
+	\begin{figure}[H]
+		 \centering
+		 \includegraphics[width=1\columnwidth]{../rolo.jpg}
+		 %\caption{Tubo da eletrônica embarcada}
+		 \label{fig:rolo}
+	 \end{figure}
+	 
   \pagebreak[4]
-  \item Sendo \(\overline{CE}\) a altura relativa à base \(\overline{AB}\) e
-  \(D\) o ponto médio de \(AC\). Calcule \(\overline{ED}\).
+  \begin{enumerate}[a)]
+    \item $10\pi cm$
+    \item $20\pi cm$
+    \item $50\pi cm$
+    \item $100\pi cm$
+  \end{enumerate}
+		
+  %\pagebreak[4]
+  \item Um cubo é equilibrado sobre apenas um de seus vértices. Quando visto de
+  cima ele se apresenta como um hexagono regular de lado de $1 cm$ de lado
+  (vide figuras). Para isso a superfície do cubo deve ser de:
 
   \nopagebreak[4]
+  \begin{multicols}{2}
   
-
-		\begin{figure}[!h]
-		\centering
-			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-			\clip(0.26,-5.16) rectangle (15.040000000000001,1.18);
-			\draw[line width=0.4pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (6.212132034355964,-3.0) -- (6.212132034355964,-2.7878679656440357) -- (6.0,-2.7878679656440357) -- (6.0,-3.0) -- cycle; 
-			\draw (2.0,-3.0)-- (13.0,-3.0);
-			\draw (13.0,-3.0)-- (6.0,0.0);
-			\draw (6.0,0.0)-- (2.0,-3.0);
-			\draw (6.0,0.0)-- (6.0,-3.0);
-			\draw (3.52,0.26) node[anchor=north west] {$\overline{AC} \, = \, 5$};
-			\draw (9.8,-0.54) node[anchor=north west] {$\overline{CB} \, = \, 7.62$};
-			\draw (6.12,-3.56) node[anchor=north west] {$\overline{BA} \, = \, 11$};
-			\draw [dotted] (6.0,-3.0)-- (4.0,-1.5);
-			\begin{scriptsize}
-			\draw [fill=qqqqff] (2.0,-3.0) circle (1.5pt);
-			\draw[color=qqqqff] (1.52,-3.2199999999999998) node {$A$};
-			\draw [fill=qqqqff] (13.0,-3.0) circle (1.5pt);
-			\draw[color=qqqqff] (13.14,-2.7199999999999998) node {$B$};
-			\draw [fill=qqqqff] (6.0,0.0) circle (1.5pt);
-			\draw[color=qqqqff] (6.14,0.28) node {$C$};
-			\draw [fill=uuuuuu] (6.0,-3.0) circle (1.5pt);
-			\draw[color=uuuuuu] (5.8,-3.32) node {$E$};
-			\draw [fill=uuuuuu] (4.0,-1.5) circle (1.5pt);
-			\draw [fill=uuuuuu] (9.5,-1.5) circle (1.5pt);
-			\draw [fill=uuuuuu] (7.5,-3.0) circle (1.5pt);
-			\draw [fill=uuuuuu] (4.0,-1.5) circle (1.5pt);
-			\draw[color=uuuuuu] (3.56,-1.2000000000000002) node {$D$};
-			\end{scriptsize}
+	\begin{figure}[H]
+		 \centering
+		 \includegraphics[width=1\columnwidth]{../cube.jpg}
+		 %\caption{Tubo da eletrônica embarcada}
+		 \label{fig:cube}
+	\end{figure}
+	
+	\begin{figure}[H]
+		 \centering
+			\begin{tikzpicture}[ line cap=round,line join=round,>=triangle
+			45,x=1.0cm,y=1.0cm] \clip(6.38,-5.78) rectangle (11.56,-0.66);
+			\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (8,-5) -- (10,-5) -- (11,-3.27) -- (10,-1.54) -- (8,-1.54) -- (7,-3.27) -- cycle;
+			\draw [line width=1.2pt,color=zzttqq] (8,-5)-- (10,-5);
+			\draw [line width=1.2pt,color=zzttqq] (10,-5)-- (11,-3.27);
+			\draw [line width=1.2pt,color=zzttqq] (11,-3.27)-- (10,-1.54);
+			\draw [line width=1.2pt,color=zzttqq] (10,-1.54)-- (8,-1.54);
+			\draw [line width=1.2pt,color=zzttqq] (8,-1.54)-- (7,-3.27);
+			\draw [line width=1.2pt,color=zzttqq] (7,-3.27)-- (8,-5);
+			\draw [line width=1.2pt] (8,-1.54)-- (9,-3.27);
+			\draw [line width=1.2pt] (9,-3.27)-- (11,-3.27);
+			\draw [line width=1.2pt] (9,-3.27)-- (8,-5);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (10,-1.54)-- (9,-3.27);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (9,-3.27)-- (7,-3.27);
+			\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (9,-3.27)-- (10,-5);
+			\draw (8.66,-0.78) node[anchor=north west] {$$1 cm$$};
 			\end{tikzpicture}
-		\end{figure}
+	\end{figure}
+  \end{multicols}
+  
+  \begin{enumerate}[a)]
+    \item $12 cm^2$
+    \item $9 cm^2$
+    \item $6 cm^2$
+    \item $2 cm^2$
+  \end{enumerate}
 
-  \item Archduke Franz Ferdinand decidiu fazer uma caixinha em formato de cubo
-  para guardar sua bola de futebol. Ele não possuia a bola em mãos, mas como um
-  bom austríaco estava com seu Livro de Regras 2013 / 2014 da CBF, onde se lia o
-  trecho abaixo. Qual o volume mínimo que deve ter a caixinha de Franz para
-  comportar a bola de futebol, certamente?
+  \item Uma balança de cozinha funciona encontrando o ponto de equilíbrio entre
+  o ingrediente a ser medido e um peso conhecido. Para encontrar o ponto de
+  equilibrio move-se a base sobre o qual a balança se equilibra, vide figura,
+  em seguida deve-se olhar qual o valor em gramas que a base está apontando. 
+  
+  \begin{multicols}{2}
+  
+	\begin{figure}[H]
+		 \centering
+		 \includegraphics[width=0.9\columnwidth]{../balanca01PB.jpg}
+		 %\caption{Tubo da eletrônica embarcada}
+		 \label{fig:bal01}
+	\end{figure}
+  \nopagebreak[4]
+	
 
-  \begin{quote}
-  ''{\Large \textbf{Regra 2: A Bola}}\\\\
-  \textbf{Características e medidas}\\
-  \textbf{A bola:}
-  \begin{itemize}
-    \item será esférica
-    \item será de couro ou qualquer outro material adequado
-    \item terá uma circunferência não supe\-rior a 70 cm e não inferior a 68 cm
-    \item terá um peso não superior a 450 g e não inferior a 410 g no começo da
-    partida
-    \item terá uma pressão equivalente a 0,6 – 1,1 atmosfe\-ras (600 – 1100
-    g/cm$^2$) ao nível do mar (8.5 a 15.6 libras).''
-  \end{itemize}
-  \end{quote}
+	\begin{figure}[H]
+		 \centering
+		 \includegraphics[width=0.95\columnwidth]{../balanca02PB.jpg}
+		 %\caption{Tubo da eletrônica embarcada}
+		 \label{fig:bal02}
+	\end{figure}
+  \end{multicols}
+  
+  O princípio da balança funciona, pois existe uma relação entre a distância que
+  se desloca o ponto de equilíbrio e o peso do ingrediente que está sendo
+  medido. Esse deslocamento é medido a partir do zero, onde não há ingrediente
+  sendo medido. O gráfico que melhor esboça a relação entre a distância que o
+  ponto de equilíbrio é deslocado e o peso do ingrediente sendo medido é:
+  
+  \begin{enumerate}[a)]
+    \item 
+  \begin{tikzpicture}
+    \begin{axis}[
+        ymin=0,ymax=125,
+        xmin=0,xmax=14,
+        ticks=none,axis x line=bottom,axis y line=left,ylabel={Peso }, xlabel={Distância},
+    ]
+    \addplot[
+        domain=0:249.999,
+        samples=1000,
+    ]
+        { (15/(15-x)-1)*10};
+    \end{axis}
+\end{tikzpicture}
+    \item 
+
+
+  \begin{tikzpicture}
+    \begin{axis}[
+        ymin=0,ymax=150,
+        xmin=0,xmax=14,
+        ticks=none,axis x line=bottom,axis y line=left,ylabel={Peso},
+        xlabel={Distância}, ]
+    \addplot[
+        domain=0:249.999,
+        samples=1000,
+    ]
+        { (15-15/(1+x))*10};
+    \end{axis}
+\end{tikzpicture}
+    \item 
+
+  \begin{tikzpicture}
+    \begin{axis}[
+        ymin=0,ymax=14,
+        xmin=0,xmax=14,
+        ticks=none,axis x line=bottom,axis y line=left,ylabel={Peso}, xlabel={Distância},
+    ]
+    \addplot[
+        domain=0:249.999,
+        samples=1000,
+    ]
+        { x};
+    \end{axis}
+\end{tikzpicture}
+    \item 
+
+  \begin{tikzpicture}
+    \begin{axis}[
+        ymin=0,ymax=1.2,
+        xmin=0,xmax=180,
+        ticks=none,axis x line=bottom,axis y line=left,ylabel={Peso }, xlabel={Distância},
+    ]
+    \addplot[
+        domain=0:249.999,
+        samples=1000,
+    ]
+        { sin(x)};
+    \end{axis}
+\end{tikzpicture}
+\end{enumerate}
 \end{enumerate}
 
 \end{document}
